@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{!! NoCaptcha::renderJs() !!}
+
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,7 @@
         <title>Login</title>
 
         <link rel="stylesheet" href="{{ asset('/css/user-style.css')}}">
+        {!! NoCaptcha::renderJs() !!}
 </head>
 
 <body>
@@ -25,6 +26,7 @@
         <label>
             Password <strong>::</strong> <input type="password" name="password" required />
         </label><br /> <br />
+    
         <button type="submit">Login</button>
         @error('credentials')
             <div class="warn">{{ $message }}</div>
@@ -32,6 +34,11 @@
         </form>
 
         {!! NoCaptcha::display() !!}
+        @if ($errors->has('g-recaptcha-response'))
+    <span class="help-block">
+        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+    </span>
+    @endif
 
 </main>
 
