@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{!! NoCaptcha::renderJs() !!}
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +30,9 @@
             <div class="warn">{{ $message }}</div>
         @enderror
         </form>
+
+        {!! NoCaptcha::display() !!}
+
 </main>
 
     <footer>
