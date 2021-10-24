@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class LoginController extends Controller
 {
@@ -12,7 +14,9 @@ class LoginController extends Controller
     }
 
     function authenticate(Request $request) {
-        // get credentials from user.
+        $validate = Validator::make(request()->all(), [
+            'g-recaptcha-response' => 'required|captcha'
+           ]);
         $data = $request->getParsedBody();
         $credentials = [
         'email' => $data['email'],

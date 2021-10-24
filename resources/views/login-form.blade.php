@@ -26,19 +26,20 @@
         <label>
             Password <strong>::</strong> <input type="password" name="password" required />
         </label><br /> <br />
-    
-        <button type="submit">Login</button>
-        @error('credentials')
-            <div class="warn">{{ $message }}</div>
-        @enderror
-        </form>
-
         {!! NoCaptcha::display() !!}
         @if ($errors->has('g-recaptcha-response'))
     <span class="help-block">
         <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
     </span>
     @endif
+    <br />
+        <button type="submit">Login</button>
+        @error('credentials')
+            <div class="warn">{{ $message }}</div>
+        @enderror
+        </form>
+
+
 
 </main>
 
