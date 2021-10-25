@@ -24,7 +24,7 @@
 
 </header>
 
-    <nav>
+    <nav class="nav-main">
         <ul>
             <a href="{{route('maindish-list')}}"><strong>Maindish</strong></a>
             <a href="{{route('menut-list')}}"><strong>MenuType</strong></a>

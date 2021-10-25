@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+       
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
 </head>
 
 <body>
-<main>
+<main >
     <header>
         <h1>Login</h1>
     </header>
@@ -26,6 +27,9 @@
         <label>
             Password <strong>::</strong> <input type="password" name="password" required />
         </label><br /> <br />
+<<<<<<< HEAD
+        <button class="submit" type="submit">Login</button>
+=======
         {!! NoCaptcha::display() !!}
         @if ($errors->has('g-recaptcha-response'))
     <span class="help-block">
@@ -33,12 +37,11 @@
     </span>
     @endif
     <br />
-        <button type="submit">Login</button>
+>>>>>>> bc7b5bac956cd389dfe99ba0abeb121212bc9992
         @error('credentials')
             <div class="warn">{{ $message }}</div>
         @enderror
         </form>
-
 
 
 </main>
